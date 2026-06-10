@@ -6,8 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var helloRouter = require('./routes/hello');
-var notesRouter = require('./routes/notes');
+//var helloRouter = require('./routes/hello');
+//var notesRouter = require('./routes/notes');
+//var catRouter = require('./routes/cat');
+var dogRouter = require('./routes/dog');
 
 //Express オブジェクトの作成と基本設定 15行目まで
 var app = express();
@@ -26,8 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 //ルート用、エラー用のapp.use 31行目まで
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/hello', helloRouter);
-app.use('/notes', notesRouter);
+//app.use('/hello', helloRouter);
+//app.use('/notes', notesRouter);
+//app.use('/cat', catRouter);
+app.use('/dog', dogRouter);
+
 
 
 // catch 404 and forward to error handler
